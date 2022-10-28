@@ -28,18 +28,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('method-override'));
-// app.use(session({
-//   secret: process.env.SECRET,
-//   resave: false,
-//   saveUninitialized: true
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-// app.use(function(req, res, next) {
-//   res.locals.user = req.user;
-//   next();
-// });
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 
 app.use('/', indexRouter);
