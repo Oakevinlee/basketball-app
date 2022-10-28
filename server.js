@@ -9,10 +9,12 @@ var methodOverride = require('method-override');
 
 require('dotenv').config();
 require('./config/database');
+require('./config/passport');
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var courtsRouter = require('./routes/courts');
 const { allowedNodeEnvironmentFlags } = require('process');
 
 var app = express();
@@ -29,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('method-override'));
 app.use(session({
-  secret: process.env.SECRET,
+  secret: process.env.GOOGLE_SECRET,
   resave: false,
   saveUninitialized: true
 }));
@@ -44,6 +46,7 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/courts', courtsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
