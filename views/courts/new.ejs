@@ -1,0 +1,29 @@
+<%- include('../partials/header'); %>
+
+
+<h3>Add New Courts Below!</h3>
+
+<form action="/courts" method="POST">
+  <label>Court Name 
+    <input type="text" name="court"required> 
+  </label>
+
+  <label>Court Days
+    <select name="courtDays">
+      <option value="Monday">M</option>
+      <option value="Tuesday">T</option>
+      <option value="Wednesday">W</option>
+      <option value="Thursday">TH</option>
+      <option value="Friday">F</option>
+      <option value="Saturday">SAT</option>
+      <option value="Sunday">SUN</option>
+    </select>
+  </label>
+
+  
+
+  <button type="submit">Add </button>
+</form>
+
+
+<%- include('../partials/footer'); %>
