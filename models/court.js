@@ -6,10 +6,28 @@ court: {
   type: String,
   
 }, 
-  courtDays: {
+
+  location: {
+    type: String
+
+  },
+
+  courtRating: {
     type: String,
-    enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    enum: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
     },
+
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+
+    userName: String, 
+    userAvatar: String,
+    googleId: {type: String}
+
+
 
 
   // timestamps: true

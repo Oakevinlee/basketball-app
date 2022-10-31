@@ -1,8 +1,28 @@
 <%- include('../partials/header'); %>
 
-
 <img src="https://i.imgur.com/1hZtBsT.jpeg" alt="">
 
+<h2>New Courts</h2>
+<table>
+  <thead>
+    <tr>
+      <th> Court </th>
+      <th> Address </th>
+      <th> Rating </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% courts.forEach(function(c) { %>
+      <tr>
+        <td><%= c.courtRating %></td>
+        <td><%= c.userName %></td>
+        <td><%= c.userAvatar %></td>
+        <td><%= c.departs %></td>
+        <td><a href="/courts/<%= c._id %>">DETAILS</a></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
 
 
 

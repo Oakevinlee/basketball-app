@@ -1,22 +1,42 @@
-<%- include('../partials/header'); %>
+<!-- <%- include('../partials/header'); %> -->
 
+
+<nav>
+    <% if (user) { %>
+      <a href="/courts"> <strong>H O M E</strong>|</a>
+      <a href="/courts/new"><strong>ADD NEW COURT|</strong></a>
+    <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
+      
+    </nav>
 
 <h3>Add New Courts Below!</h3>
 
 <form action="/courts" method="POST">
-  <label>Court Name 
+  <label>Court Name:
     <input type="text" name="court"required> 
   </label>
 
-  <label>Court Days
-    <select name="courtDays">
-      <option value="Monday">M</option>
-      <option value="Tuesday">T</option>
-      <option value="Wednesday">W</option>
-      <option value="Thursday">TH</option>
-      <option value="Friday">F</option>
-      <option value="Saturday">SAT</option>
-      <option value="Sunday">SUN</option>
+  <!-- <form action="/courts" method="POST">
+    <label>Location:
+      <input type="text" name="court"required> 
+    </label> -->
+
+  <label>Court Rating:
+    <select name="courtRating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      
     </select>
   </label>
 
