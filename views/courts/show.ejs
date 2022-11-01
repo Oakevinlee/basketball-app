@@ -5,9 +5,12 @@
     <div><%= court.court %></div>
     <div>COURT RATING</div>
     <div><%= court.courtRating %></div>
+    <div> beeop beeop</div>
+   
 
-
-
+    <form action="/courts/<%= court._id %>?_method=DELETE" method="POST">
+        <button type="submit">X</button>
+    </form>
 
 
 </section>

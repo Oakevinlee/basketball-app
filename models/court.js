@@ -26,10 +26,6 @@ court: {
   userName: String, 
   userAvatar: String,
   
-  
-
-
-
   // timestamps: true
 });
 

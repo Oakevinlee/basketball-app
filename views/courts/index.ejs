@@ -1,14 +1,15 @@
 <%- include('../partials/header'); %>
 
-<img src="https://i.imgur.com/1hZtBsT.jpeg" alt="">
+<!-- <img src="https://i.imgur.com/1hZtBsT.jpeg" alt=""> -->
 
 <h2>New Courts</h2>
 <table>
   <thead>
     <tr>
-      <th> Avatar</th>
-      <th> Name </th>
+      <th> Avatar </th>
+      <th> Court </th>
       <th> Location </th>
+      <th> Details </th>
       <th> Rating </th>
     </tr>
   </thead>
@@ -17,7 +18,7 @@
       <tr>
           <td><img src="<%= c.userAvatar %>" referrerpolicy="no-referrer"></td>
           <td><%= c.userName %></td>
-          <td><%= c.departs %></td>
+          <td><%= c.location %></td>
           <td><a href="/courts/<%= c._id %>">dem deets</a></td>
           <td><%= c.courtRating %>/10</td>
       </tr>

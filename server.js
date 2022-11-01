@@ -15,7 +15,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var courtsRouter = require('./routes/courts');
-const { allowedNodeEnvironmentFlags } = require('process');
+
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(methodOverride('method-override'));
+app.use(methodOverride('_method'));
 app.use(session({
   secret: process.env.GOOGLE_SECRET,
   resave: false,
@@ -43,7 +43,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+const isLoggedIn = require('./config/ensureLoggedin');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/courts', courtsRouter);
