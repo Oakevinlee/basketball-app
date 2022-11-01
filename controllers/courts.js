@@ -44,6 +44,5 @@ function deleteCourt(req, res) {
         res.redirect('/courts');
       }
     )
-    // Court.deleteOne(req.params.id);
-    // res.redirect('/courts');
+  
   }

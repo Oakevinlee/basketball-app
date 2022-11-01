@@ -9,8 +9,18 @@
    
 
     <form action="/courts/<%= court._id %>?_method=DELETE" method="POST">
-        <button type="submit">X</button>
+        <button type="submit">DELETE</button>
     </form>
+
+
+    <form action="/courts" method="POST">
+        
+      <label><textarea type="text" name="location"required cols="50" rows="10"></textarea></label> 
+          
+      <button type="submit">LEAVE A COMMENT</button>
+    
+    </form>
+      
 
 
 </section>
