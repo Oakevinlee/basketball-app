@@ -6,19 +6,20 @@
 <table>
   <thead>
     <tr>
-      <th> Court </th>
-      <th> Address </th>
+      <th> Avatar</th>
+      <th> Name </th>
+      <th> Location </th>
       <th> Rating </th>
     </tr>
   </thead>
   <tbody>
     <% courts.forEach(function(c) { %>
       <tr>
-        <td><%= c.courtRating %></td>
-        <td><%= c.userName %></td>
-        <td><%= c.userAvatar %></td>
-        <td><%= c.departs %></td>
-        <td><a href="/courts/<%= c._id %>">DETAILS</a></td>
+          <td><img src="<%= c.userAvatar %>" referrerpolicy="no-referrer"></td>
+          <td><%= c.userName %></td>
+          <td><%= c.departs %></td>
+          <td><a href="/courts/<%= c._id %>">dem deets</a></td>
+          <td><%= c.courtRating %>/10</td>
       </tr>
     <% }); %>
   </tbody>

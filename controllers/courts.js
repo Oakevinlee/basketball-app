@@ -20,16 +20,17 @@ function newCourt(req, res) {
 }
 
   function show(req, res) {
-    console.log('show');
-    res.render('courts/show');
+    Court.findById(req.params.id, function(err, court){
+        res.render('courts/show', {title: 'Court Details', court})
+    });
   }
   function create(req, res) {
-    console.log('create');
-    req.body.user = req.user.id;
+    req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     let court = new Court(req.body)
     court.save(function(err){
+        console.log(err);
         if (err) return res.redirect('/courts/new')
         res.redirect('/courts')
     }) 

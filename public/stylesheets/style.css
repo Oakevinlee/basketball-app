@@ -7,7 +7,12 @@ a {
   color: #00B7FF;
 }
 
+.login {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 34px;
+}
 .login img {
-  height: 15px;
-
+  height: 20px;
 }
