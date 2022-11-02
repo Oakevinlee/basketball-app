@@ -7,12 +7,7 @@ const commentSchema = new Schema({
     type: String,
     required: true
   },
-  rating: {
-    type: Number,
-    min: 1,
-    max: 5,
-    default: 5
-  },
+  
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
@@ -38,6 +33,10 @@ const courtSchema = new Schema({
   courtRating: {
     type: String,
     enum: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+  },
+
+  image: {
+    type: String,
   },
   
   user: {

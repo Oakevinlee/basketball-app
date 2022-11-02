@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-const isLoggedIn = require('./config/ensureLoggedin');
+const isLoggedIn = require('./config/ensureLoggedIn');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/courts', courtsRouter);

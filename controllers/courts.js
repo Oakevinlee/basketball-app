@@ -38,7 +38,6 @@ function index(req, res) {
   }
   
 function deleteCourt(req, res) {
-  console.log('hello')
     Court.findOneAndDelete(
       {_id: req.params.id, user:req.user}, function(err) {
         res.redirect('/courts');
