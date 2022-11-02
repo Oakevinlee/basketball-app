@@ -6,8 +6,9 @@ module.exports = {
   create,
   index,
   show,
-  delete: deleteCourt
-    
+  delete: deleteCourt,
+  edit,
+  update
 }
 
 function newCourt(req, res) {
@@ -44,4 +45,23 @@ function deleteCourt(req, res) {
       }
     )
   
+  }
+
+  function edit(req, res) {
+    Court.findOne({_id: req.params.id}, function(err, court) {
+      if (err || !court) return res.redirect('/courts');
+      res.render('courts/edit', {court});
+    });
+  }
+
+  function update(req, res) {
+    Court.findOneAndUpdate(
+      {_id: req.params.id},
+      req.body, 
+      {new: true},
+      function(err, court) {
+        if (err || !court) return res.redirect('/cours');
+        res.redirect(`/courts/${court._id}`);
+      }
+    );
   }

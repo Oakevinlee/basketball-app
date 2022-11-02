@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title> Local Hoops </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <nav>
       <% if (user) { %>
-        <a href="/courts"> <strong>H O M E</strong>|</a>
-        <a href="/courts/new"><strong>ADD NEW COURT|</strong></a>
+        <a href="/courts"> <strong>H O M E</strong></a>
+        <a href="/courts/new"><strong>ADD NEW COURT</strong></a>
       <a href="/logout">LOG OUT</a>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
-        <h1>Local Hoops Review</h1>
-        <p>This is an app where you can check out and review local basketball courts in the Bay Area! </p>
-        </nav>
-  
+      </nav>
+      
+      

@@ -22,17 +22,6 @@ function create(req, res){
     
 }
 
-// function deleteComment(req, res) {
-//       Court.findOneAndDelete(
-//         {"comments._id": req.params.id, "comments.user": req.user}, function(err, court) {
-//             court.comments.remove(req.params.id);
-//             court.save(function(err){
-//                 res.redirect(`/courts/${court._id}`);
-//             })
-//         }
-//       )
-// };
-
 function deleteComment(req, res, next) {
     Court.findOne({
       'comments._id': req.params.id,

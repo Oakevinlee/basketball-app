@@ -1,8 +1,8 @@
 <%- include('../partials/header'); %>
 
-<h3>Add New Courts Below!</h3>
+<h3>EDIT COURT!</h3>
 
-<form action="/courts" method="POST">
+<form action="/courts/<%= court._id %>?_method=PUT" method="POST">
   <label>Court Name:
     <input type="text" name="court"required> 
   </label>
@@ -35,4 +35,4 @@
 </form>
 
 
-<%- include('../partials/footer'); %>
+<%- include('../partials/footer') %>
