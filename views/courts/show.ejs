@@ -1,28 +1,107 @@
 <%- include('../partials/header'); %>
 
 <section>
-    <div>Court Name</div>
+    <div>Court </div>
     <div><%= court.court %></div>
     <div>COURT RATING</div>
     <div><%= court.courtRating %></div>
     <div> beeop beeop</div>
-   
+</section>
 
+
+<br><br><h2>Comments</h2>
+
+  <form id="add-comment-form" method="POST"
+    action="/courts/<%= court._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Comment">
+  </form>
+
+
+    
+<% if (court.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Rating</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% court.comments.forEach(function(c) { %>
+          <% total += c.rating %>
+          <tr>
+            <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"> <%= c.userName %></td>
+            <td><%= c.createdAt.toLocaleDateString() %></td>
+            <td><%= c.content %></td>
+            <td><%= c.rating %></td>
+            <td>
+              <% if (user?._id.equals(c.user)) { %>
+                <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                  <button type="submit">DELETE</button>
+                </form>
+              <% } %>
+            </td>
+          </tr>
+        <% }); %>
+        <tr>
+          <td colspan="2"></td>
+          <td>
+            <strong>
+              <%= (total / court.comments.length).toFixed(1) %>
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Comments</h5>
+  <% } %>
+    
+  <%- include('../partials/footer') %>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <form action="/courts" method="POST">
+        
+        <label><textarea type="text" 
+            name="location"required cols="50" rows="10"></textarea>
+        </label> 
+        
+        <button type="submit">LEAVE A COMMENT</button>
+        
+    </form>
+    
     <form action="/courts/<%= court._id %>?_method=DELETE" method="POST">
         <button type="submit">DELETE</button>
-    </form>
+    </form> -->
 
 
-    <form action="/courts" method="POST">
-        
-      <label><textarea type="text" name="location"required cols="50" rows="10"></textarea></label> 
-          
-      <button type="submit">LEAVE A COMMENT</button>
-    
-    </form>
-      
-
-
-</section>
 
 <%- include('../partials/footer'); %>
