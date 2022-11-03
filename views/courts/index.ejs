@@ -1,7 +1,5 @@
 <%- include('../partials/header'); %>
 
-<!-- <img src="https://i.imgur.com/1hZtBsT.jpeg" alt=""> -->
-
 <h1>Courts</h1>
 <p>See New Courts Below</p>
 <table>
@@ -12,13 +10,14 @@
       <th> Location </th>
       <th> Details </th>
       <th> Rating </th>
+      <th>X</th>
     </tr>
   </thead>
   <tbody>
     <% courts.forEach(function(c) { %>
       <tr>
           <td><img src="<%= c.userAvatar %>" referrerpolicy="no-referrer"></td>
-          <td><%= c.userName %></td>
+          <td><%= c.court %></td>
           <td><%= c.location %></td>
           <td><a href="/courts/<%= c._id %>">dem deets</a></td>
           <td><%= c.courtRating %>/10</td>
@@ -29,9 +28,5 @@
     <% }); %>
   </tbody>
 </table>
-
-
-
-
 
 <%- include('../partials/footer'); %>

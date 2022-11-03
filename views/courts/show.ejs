@@ -1,11 +1,33 @@
 <%- include('../partials/header'); %>
 
 <section class="court-details">
-        <div>Court: <%= court.court %></div>
-        <div>COURT RATING: <%= court.courtRating %></div>
-    <div><img class="courtpic" src="<%= court.image %>"></div>
-</section>
-<button><a href="/courts/<%= court._id %>/edit">EDIT</a></button>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >COURT NAME:</span
+    >
+    <div
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+    >
+      <%= court.court %>
+    </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >RATING:</span
+    >
+    <div
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+    >
+      <%= court.courtRating %>
+    </div>
+        <!-- <div>Court: <%= court.court %></div>
+        <div>COURT RATING: <%= court.courtRating %></div> -->
+      </section>
+      <div><img class="courtpic" src="<%= court.image %>"></div>
+
 
 <br><br><h2>Comments</h2>
 
