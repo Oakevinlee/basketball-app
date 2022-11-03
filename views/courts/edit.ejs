@@ -1,38 +1,10 @@
 <%- include('../partials/header'); %>
 
-<h3>EDIT COURT!</h3>
-
-<form action="/courts/<%= court._id %>?_method=PUT" method="POST">
-  <label>Court Name:
-    <input type="text" name="court"required> 
-  </label>
-
-  <label>Location:
-      <input type="text" name="location"required> 
-    </label>
-
-  <label>Court Rating:
-    <select name="courtRating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-  </label>
-
-  <label>
-    <input type="text" name="image">
-  </label>
-  
-
-  <button type="submit">Add </button>
-</form>
+<form id="add-comment-form" method="POST"
+    action="/courts/<%= court._id %>/comments/<%= comment._id %>?_method=PUT">
+    <textarea name="content"cols="50" rows="10" ><%= comment.content %></textarea>
+    <input type="submit" value="EDIT">
+  </form>
 
 
 <%- include('../partials/footer') %>

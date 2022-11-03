@@ -1,30 +1,28 @@
 <%- include('../partials/header'); %>
 
-<section>
-    <div>Court </div>
-    <div><%= court.court %></div>
-    <div>COURT RATING</div>
-    <div><%= court.courtRating %></div>
-    <div><img class="courtpic" src="<%= court.image %>" alt="image did not loaf"></div>
-    <button><a href="/courts/<%= court._id %>/edit">EDIT</a></button>
+<section class="court-details">
+        <div>Court: <%= court.court %></div>
+        <div>COURT RATING: <%= court.courtRating %></div>
+    <div><img class="courtpic" src="<%= court.image %>"></div>
 </section>
+<button><a href="/courts/<%= court._id %>/edit">EDIT</a></button>
 
 <br><br><h2>Comments</h2>
 
   <form id="add-comment-form" method="POST"
     action="/courts/<%= court._id %>/comments">
-    <textarea name="content"></textarea>
+    <textarea name="content"cols="50" rows="10"></textarea>
     <input type="submit" value="Leave A Comment!">
   </form>
 
-
-    
 <% if (court.comments.length) { %>
     <table>
       <thead>
         <tr>
           <th>User</th>
+          <th>Name</th>
           <th>Date</th>
+          <th>Comment</th>
         </tr>
       </thead>
       <tbody>
@@ -43,6 +41,12 @@
                 </form>
               <% } %>
             </td>
+            <td>
+                <% if (user?._id.equals(c.user)) { %>
+                    <button><a href="/comments/<%= c._id %>/edit">EDIT</a></button>
+                  </form>
+                <% } %>
+              </td>
           </tr>
         <% }); %>
 
