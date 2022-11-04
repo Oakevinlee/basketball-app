@@ -38,7 +38,11 @@ Hoops on hoops, courts on courts. I made this app to share, rate, and review all
 ![Node](https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js)
 
 ## Getting Started 
-Click the link below to play check out the app! https://basketball-app-reviews.herokuapp.com/
+Click the link to check out the app! https://basketball-app-reviews.herokuapp.com/
+
+## Planning
+
+I used trello to organize my thoughts. Check it out! https://trello.com/b/x5kjuicZ/project-2
 
 ## Future Enchancements
 - UPDATE CSS
